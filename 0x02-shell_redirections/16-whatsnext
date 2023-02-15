@@ -1,0 +1,2 @@
+#!/bin/bash
+grep timer -A 3 /etc/passwd
