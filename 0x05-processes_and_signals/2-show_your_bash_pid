@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# This script extends previous exercise command and displays line containing the bas
+# shellcheck disable=SC2009
+ps -u | grep "bash"
