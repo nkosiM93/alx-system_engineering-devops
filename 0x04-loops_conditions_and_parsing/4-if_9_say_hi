@@ -1,6 +1,15 @@
 #!/usr/bin/env bash
-# Script uses a for-loop to print 10 lines
-for i in {1..10};
+# Displays 'Best School' ten times but at the ninth iter it displays 'Hi'
+
+i=0
+while [ $i -lt 10 ];
 do
 	echo "Best School"
+	
+	if [ $i -eq 8 ];
+	then
+		echo "Hi"
+	fi
+
+	((i++))
 done
