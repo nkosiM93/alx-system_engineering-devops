@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Prints using until
+
+ind=10
+until [ $ind -eq 0 ];
+do
+	echo "Best School"
+	((ind-=1))
+done
