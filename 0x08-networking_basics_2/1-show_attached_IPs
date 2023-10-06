@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Display alla active IP Addresses
+
+ifconfig | grep 'inet' | awk '{print $2}'
