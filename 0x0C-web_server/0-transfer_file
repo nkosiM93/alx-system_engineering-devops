@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Securely transfers a file from local machine to remote server
 
 if [ "$#" -lt 3 ]; then
