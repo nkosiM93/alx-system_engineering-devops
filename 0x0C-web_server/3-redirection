@@ -18,7 +18,7 @@ if dpkg -l | grep -q 'nginx'; then
 			}
 			
 			location /redirect_me {	
-				return 301 \"301 Moved Permanently\";
+				return 301 \"https://google.com\";
 			}
 	}" | sudo tee /etc/nginx/sites-available/default > /dev/null
 	sudo service nginx start
