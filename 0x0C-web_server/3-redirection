@@ -14,11 +14,11 @@ if dpkg -l | grep -q 'nginx'; then
 
 			server_name _;
 			location / {
-				return $uri $uri/ =400;
+				try_files \$uri \$uri/ =400;
 			}
 			
 			location /redirect_me {	
-				return 301 "301 Moved Permanently\n";
+				return 301 \"301 Moved Permanently\";
 			}
 	}" | sudo tee /etc/nginx/sites-available/default > /dev/null
 	sudo service nginx start
