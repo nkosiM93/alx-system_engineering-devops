@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# Install the web server 'nginx' on the server
+sudo apt-get update -y
+sudo apt-get upgrade -y
+sudo apt-get install nginx -y
+if dpkg -l | grep -q 'nginx'; then
+	sudo ufw allow "Nginx HTTP"
+	echo "server {
+			listen 80 default_server;
+       			listen [::]:80 default_server;
+
+			root /var/www/html;
+			index index.html index.htm index.nginx-debian.html;
+
+			server_name _;
+			location / {
+				return $uri $uri/ =400;
+			}
+			
+			location /redirect_me {	
+				return 301 "301 Moved Permanently\n";
+			}
+	}" | sudo tee /etc/nginx/sites-available/default > /dev/null
+	sudo service nginx start
+fi
